@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { styled } from '../../config/stitches.config';
+import { stitches } from '../../config/stitches.config';
 import GradientCircle from '../GradientCircle';
 
-const StyledDropdownButton = styled('span', {
+const StyledDropdownButton = stitches.styled('span', {
   position: 'relative',
   padding: '10px',
   border: '1px solid #08192e',
@@ -10,7 +10,7 @@ const StyledDropdownButton = styled('span', {
   cursor: 'pointer',
 });
 
-const StyledDropdownContent = styled('div', {
+const StyledDropdownContent = stitches.styled('div', {
   width: '200px',
   position: 'absolute',
   marginTop: '10px',

@@ -1,14 +1,19 @@
-import { styled } from '../config/stitches.config';
+import { stitches } from '../config/stitches.config';
+import Text from './Text';
 
-const StyledFooter = styled('footer', {
+const StyledFooter = stitches.styled('footer', {
   position: 'absolute',
   bottom: '0',
   marginTop: '2rem',
-  marginBottom: '2rem'
+  marginBottom: '2rem',
 });
 
 const Footer = () => {
-  return <StyledFooter>&copy; {new Date().getFullYear()} - Jaakko Lankila</StyledFooter>;
+  return (
+    <StyledFooter>
+      <Text>&copy; {new Date().getFullYear()} - Jaakko Lankila</Text>
+    </StyledFooter>
+  );
 };
 
 export default Footer;

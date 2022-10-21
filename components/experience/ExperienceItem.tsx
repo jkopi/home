@@ -1,7 +1,7 @@
-import { styled } from '../../config/stitches.config';
+import { stitches } from '../../config/stitches.config';
 import Text from '../Text';
 
-const ItemContainer = styled('div', {
+const ItemContainer = stitches.styled('div', {
   width: '100%',
   display: 'flex',
   flex: 1,
@@ -12,22 +12,22 @@ const ItemContainer = styled('div', {
   // justifyContent: 'space-between',
 });
 
-const TitleContainer = styled('div', {
+const TitleContainer = stitches.styled('div', {
   width: '100%',
 });
 
-const ExperienceContainer = styled('div', {
+const ExperienceContainer = stitches.styled('div', {
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
 });
 
-const Experience = styled('div', {
+const Experience = stitches.styled('div', {
   display: 'flex',
   flexDirection: 'row',
 });
 
-const StyledDiv = styled('div', {
+const StyledDiv = stitches.styled('div', {
   width: '100%',
 })
 

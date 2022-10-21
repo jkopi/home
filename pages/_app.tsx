@@ -4,12 +4,15 @@ import { useContext, useState } from 'react';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ColorContext, ColorProvider } from '../context/ColorContext';
-import { styled } from '../config/stitches.config';
+import { stitches, globalStyles } from '../config/stitches.config';
 
-const StyledWrapper = styled('div');
+const StyledWrapper = stitches.styled('div');
 
 function StyleWrapper({ children }: { children: JSX.Element }) {
   const colors = useContext(ColorContext);
+
+  globalStyles();
+
   return (
     <StyledWrapper
       css={{

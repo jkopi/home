@@ -1,6 +1,6 @@
 import { createStitches } from '@stitches/react';
 
-export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } = createStitches({
+const stitches = createStitches({
   theme: {
     colors: {
       black: '#28282B',
@@ -15,11 +15,12 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
       4: '20px',
       5: '24px',
       6: '32px',
+      'h1': '3rem'
     },
     fonts: {
-      // todo add fonts
-      system: 'system-ui, sans-serif',
-      menlo: 'Menlo, monospace',
+      inter: 'Inter',
+      // system: 'system-ui, sans-serif',
+      // menlo: 'Menlo, monospace',
     },
     fontWeights: {},
     lineHeights: {},
@@ -44,3 +45,11 @@ export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme
     }),
   },
 });
+
+const globalStyles = stitches.globalCss({
+  '@import': [
+    "url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap')"
+  ],
+});
+
+export { stitches, globalStyles };

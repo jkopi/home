@@ -1,10 +1,11 @@
 import React from 'react';
-import { styled } from '../config/stitches.config';
+import { stitches } from '../config/stitches.config';
 import Footer from './Footer';
 import Navigator from './Navigator';
 
-const StyledLayout = styled('div', {
+const StyledLayout = stitches.styled('div', {
   width: '100%',
+  minHeight: '100vh',
   margin: '0 auto',
 
   '@bp3': {

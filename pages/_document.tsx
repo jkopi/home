@@ -1,8 +1,8 @@
 import React from 'react';
 import NextDocument, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
-import { getCssText, styled } from '../config/stitches.config';
+import { stitches } from '../config/stitches.config';
 
-const StyledBody = styled('body')
+const StyledBody = stitches.styled('body');
 
 export default class MyDocument extends NextDocument {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -14,7 +14,7 @@ export default class MyDocument extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+          <style id="stitches" dangerouslySetInnerHTML={{ __html: stitches.getCssText() }} />
         </Head>
         <body>
           <Main />

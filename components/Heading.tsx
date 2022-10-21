@@ -1,7 +1,18 @@
-import { styled } from '../config/stitches.config';
+import { stitches } from '../config/stitches.config';
 
-type Props = {
-  level: '1'| '2'| '3'| '4'| '5'| '6'
-}
+const baseHeading = stitches.css({
+  fontFamily: '$inter',
+  variants: {
+    size: {
+      1: { fontSize: '$h1' },
+    },
+  },
+});
 
-// export const Heading = styled<Props>()
+const H1 = stitches.styled('h1', baseHeading, {
+  defaultVariants: {
+    size: 1,
+  },
+});
+
+export { H1 };

@@ -9,33 +9,39 @@ type ContextProps = {
   hexColorBg: string;
   hexColorFg: string;
   changeBgColor: () => void;
+  changeFgColor: () => void;
+};
+
+type CustomThemeColors = {
+  backGround: string;
+  foreGround: string;
 };
 
 export const ColorContext = createContext<ContextProps | undefined>(undefined);
 
 const ColorProvider = ({ children }: ProviderProps) => {
-  // background color
-  const [hexColorBg, setHexColorBg] = useState<string>('#fff');
-  // TODO: predefine set of colors
-  // foreground color
-  const [hexColorFg, setHexColorFg] = useState<string>('#08192e');
+  const [customThemeColors, setCustomThemeColors] = useState<CustomThemeColors>({
+    backGround: '#fff',
+    foreGround: '#08192e',
+  });
 
-  const setRandomHexColorBg = () => {
-    let color = randomColor();
-    setHexColorBg(color);
+  const setCustomThemeBg = () => {
+    const color = randomColor();
+    setCustomThemeColors({ ...customThemeColors, backGround: color });
   };
 
-  const setRandomHexColorFg = () => {
-    let color = randomColor();
-    setHexColorBg(color);
+  const setCustomThemeFg = () => {
+    const color = randomColor();
+    setCustomThemeColors({ ...customThemeColors, foreGround: color });
   };
 
   return (
     <ColorContext.Provider
       value={{
-        hexColorBg: hexColorBg,
-        hexColorFg: hexColorFg,
-        changeBgColor: setRandomHexColorBg,
+        hexColorBg: customThemeColors.backGround,
+        hexColorFg: customThemeColors.foreGround,
+        changeBgColor: setCustomThemeBg,
+        changeFgColor: setCustomThemeFg,
       }}
     >
       {children}

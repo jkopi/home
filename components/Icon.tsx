@@ -1,7 +1,11 @@
-import { styled } from '../config/stitches.config';
+import { stitches } from '../config/stitches.config';
 
-export const IconWrapper = styled('span', {
+export const IconWrapper = stitches.styled('span', {
   padding: '2px',
+  '&:hover': {
+    color: '$dim',
+    transition: 'color .1s ease',
+  },
   variants: {
     size: {
       small: {
@@ -14,12 +18,8 @@ export const IconWrapper = styled('span', {
   },
 });
 
-const LinkWrapper = styled('a', {
-  textDecoration: 'none',
-});
-
-const Icon = ({ src }: { src: JSX.Element }) => {
-  return <IconWrapper>{src}</IconWrapper>;
+const Icon = ({ children }: { children: JSX.Element }) => {
+  return <IconWrapper>{children}</IconWrapper>;
 };
 
 export default Icon;
