@@ -2,10 +2,15 @@ import { stitches } from '../config/stitches.config';
 import Text from './Text';
 
 const StyledFooter = stitches.styled('footer', {
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'flex-start',
   position: 'absolute',
   bottom: '0',
-  marginTop: '2rem',
-  marginBottom: '2rem',
+  padding: '1em',
+  '@bp3': {
+    justifyContent: 'center'
+  }
 });
 
 const Footer = () => {

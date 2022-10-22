@@ -2,12 +2,16 @@ import { stitches } from '../config/stitches.config';
 
 export const IconWrapper = stitches.styled('span', {
   padding: '2px',
+  color: '$text',
   '&:hover': {
     color: '$dim',
     transition: 'color .1s ease',
   },
   variants: {
     size: {
+      xSmall: {
+        fontSize: '18px',
+      },
       small: {
         fontSize: '26px',
       },

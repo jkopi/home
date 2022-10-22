@@ -2,6 +2,7 @@ import { stitches } from '../../config/stitches.config';
 import Text from '../Text';
 
 const ItemContainer = stitches.styled('div', {
+  padding: '1em',
   width: '100%',
   display: 'flex',
   flex: 1,

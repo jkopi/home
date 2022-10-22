@@ -1,49 +1,26 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { ColorContext, ColorProvider } from '../context/ColorContext';
+import { ColorProvider } from '../context/ColorContext';
 import { stitches, globalStyles } from '../config/stitches.config';
 
 const StyledWrapper = stitches.styled('div');
 
-function StyleWrapper({ children }: { children: JSX.Element }) {
-  const colors = useContext(ColorContext);
+function MyApp({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient());
 
   globalStyles();
 
   return (
-    <StyledWrapper
-      css={{
-        backgroundColor: colors?.hexColorBg,
-        color: colors?.hexColorFg,
-        transition: 'background-color ease-in .3s',
-      }}
-    >
-      {children}
-    </StyledWrapper>
-  );
-}
-
-function AppWrapper({ children }: { children: JSX.Element }) {
-  // provide global color state for children
-  return (
-    <ColorProvider>
-      <StyleWrapper>{children}</StyleWrapper>
-    </ColorProvider>
-  );
-}
-
-function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = useState(() => new QueryClient());
-
-  return (
     <QueryClientProvider client={queryClient}>
       <Hydrate>
-        <AppWrapper>
-          <Component {...pageProps} />
-        </AppWrapper>
+        <ColorProvider>
+          <StyledWrapper>
+            <Component {...pageProps} />
+          </StyledWrapper>
+        </ColorProvider>
       </Hydrate>
       <ReactQueryDevtools />
     </QueryClientProvider>

@@ -8,8 +8,10 @@ type ProviderProps = {
 type ContextProps = {
   hexColorBg: string;
   hexColorFg: string;
+  theme: string;
   changeBgColor: () => void;
   changeFgColor: () => void;
+  toggleTheme: () => void;
 };
 
 type CustomThemeColors = {
@@ -20,10 +22,15 @@ type CustomThemeColors = {
 export const ColorContext = createContext<ContextProps | undefined>(undefined);
 
 const ColorProvider = ({ children }: ProviderProps) => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [customThemeColors, setCustomThemeColors] = useState<CustomThemeColors>({
     backGround: '#fff',
     foreGround: '#08192e',
   });
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   const setCustomThemeBg = () => {
     const color = randomColor();
@@ -38,10 +45,12 @@ const ColorProvider = ({ children }: ProviderProps) => {
   return (
     <ColorContext.Provider
       value={{
+        theme: theme,
         hexColorBg: customThemeColors.backGround,
         hexColorFg: customThemeColors.foreGround,
         changeBgColor: setCustomThemeBg,
         changeFgColor: setCustomThemeFg,
+        toggleTheme: toggleTheme,
       }}
     >
       {children}

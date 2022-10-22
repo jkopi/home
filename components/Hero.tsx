@@ -22,6 +22,11 @@ const Button = stitches.styled('button', {
   backgroundColor: 'AntiqueWhite',
 });
 
+const StyledLink = stitches.styled('a', {
+  color: '$dim',
+  textDecoration: 'underline'
+})
+
 function Hero() {
   return (
     <Container>
@@ -31,9 +36,9 @@ function Hero() {
       </Text>
       <Text>
         By day I'm working{' '}
-        <a href="https://www.oamk.fi" target="_blank" rel="noreferrer">
-          @OAMK
-        </a>{' '}
+        <StyledLink href="https://www.oamk.fi" target="_blank" rel="noreferrer">
+          @oamk
+        </StyledLink>{' '}
         as a project designer and on my spare time I am a front-end developer working on a Legal Tech startup
       </Text>
       <Text>Interested in developing digital services and recently design systems</Text>

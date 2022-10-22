@@ -3,6 +3,9 @@ import { createStitches } from '@stitches/react';
 const stitches = createStitches({
   theme: {
     colors: {
+      text: '#08192e',
+      bgBody: '#fff',
+
       black: '#28282B',
       dim: '#313136',
       gray400: 'gainsboro',
@@ -15,7 +18,7 @@ const stitches = createStitches({
       4: '20px',
       5: '24px',
       6: '32px',
-      'h1': '3rem'
+      h1: '3rem',
     },
     fonts: {
       inter: 'Inter',
@@ -39,17 +42,29 @@ const stitches = createStitches({
   },
   utils: {
     marginX: (value: number) => ({ marginLeft: value, marginRight: value }),
-    // A property to apply linear gradient
     linearGradient: (value: string) => ({
       backgroundImage: `linear-gradient(${value})`,
     }),
   },
 });
 
-const globalStyles = stitches.globalCss({
-  '@import': [
-    "url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap')"
-  ],
+const darkTheme = stitches.createTheme('dark' ,{
+  colors: {
+    text: '#fff',
+    bgBody: '#08192e',
+  },
 });
 
-export { stitches, globalStyles };
+const globalStyles = stitches.globalCss({
+  html: {
+    backgroundColor: '$bgBody'
+  },
+  // body: {
+  //   color: '$text',
+  //   backgroundColor: '$bgBody',
+  //   transition: 'all .2s ease',
+  // },
+  '@import': ["url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap')"],
+});
+
+export { stitches, darkTheme, globalStyles };

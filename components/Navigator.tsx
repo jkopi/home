@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NavLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { stitches } from '../config/stitches.config';
@@ -12,7 +13,9 @@ const StyledNavigator = stitches.styled('header', {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
+  alignItems: 'center',
   padding: '1em',
+  // border: '1px solid salmon'
 });
 
 const StyledLinkContainer = stitches.styled('div', {
@@ -21,29 +24,42 @@ const StyledLinkContainer = stitches.styled('div', {
   gap: '2rem',
 });
 
-const StyledLinkWrapper = stitches.styled('span', {
+const StyledLink = stitches.styled('a', {
+  height: 'fit-content',
   cursor: 'pointer',
   '&:hover': {
-    borderBottom: '2px solid salmon',
+    color: 'SaddleBrown',
   },
-});
 
-const asd = stitches.css({
-  '&:hover': {
-    textDecoration: 'underline',
+  variants: {
+    styling: {
+      active: {
+        color: 'Aquamarine',
+      },
+    },
   },
 });
 
 function Navigator() {
   const location = useRouter();
-  const colors = useContext(ColorContext);
+  console.log(location.route);
+
+  const goTo = (path: string) => {
+    return location.push(path)
+  }
 
   return (
     <StyledNavigator>
       <StyledLinkContainer>
-        <Link href="/asd">Home</Link>
-        <Link href="/resume">Resume</Link>
-        <Link href="/">About me</Link>
+        <StyledLink onClick={() => goTo('/')} styling={location.asPath === '/' ? 'active' : undefined}>
+          <Text size="small">Home</Text>
+        </StyledLink>
+        <StyledLink onClick={() => goTo('/resume')} styling={location.asPath === '/resume' ? 'active' : undefined}>
+          <Text size="small">Resume</Text>
+        </StyledLink>
+        <StyledLink onClick={() => goTo('/about')} styling={location.asPath === '/about' ? 'active' : undefined}>
+          <Text size="small">About me</Text>
+        </StyledLink>
       </StyledLinkContainer>
       <ThemeToggle />
     </StyledNavigator>

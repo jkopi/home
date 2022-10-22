@@ -2,6 +2,7 @@ import { stitches } from '../config/stitches.config';
 
 const baseHeading = stitches.css({
   fontFamily: '$inter',
+  color: '$text',
   variants: {
     size: {
       1: { fontSize: '$h1' },

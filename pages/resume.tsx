@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 
 const Resume: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Jaakko Lankila | Resume</title>
         <meta name="description" />
@@ -16,8 +16,8 @@ const Resume: NextPage = () => {
         {/* <Hero /> */}
         <ExperienceItem />
       </Layout>
-    </div>
+    </>
   );
-}
+};
 
 export default Resume;
