@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { ExperienceItem } from '../components/experience/ExperienceItem';
-import GradientCircle from '../components/GradientCircle';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 

@@ -7,7 +7,6 @@ import Divider from './Divider';
 
 const Container = stitches.styled('div', {
   padding: '1em',
-  // borderBottom: '3px solid $dim',
 });
 
 const SocialsBox = stitches.styled('div', {
@@ -24,24 +23,14 @@ const Button = stitches.styled('button', {
 
 const StyledLink = stitches.styled('a', {
   color: '$dim',
-  textDecoration: 'underline'
-})
+  textDecoration: 'underline',
+});
 
 function Hero() {
   return (
     <Container>
       <H1>Hey there! &#128075;</H1>
-      <Text>
-        I'm a software developer who likes to keep constantly learning new things and progressing as a developer
-      </Text>
-      <Text>
-        By day I'm working{' '}
-        <StyledLink href="https://www.oamk.fi" target="_blank" rel="noreferrer">
-          @oamk
-        </StyledLink>{' '}
-        as a project designer and on my spare time I am a front-end developer working on a Legal Tech startup
-      </Text>
-      <Text>Interested in developing digital services and recently design systems</Text>
+      <Text css={{ marginBottom: '2rem' }}>This site is under construction 🚧</Text>
       <SocialsBox>
         <IconWrapper size="small">
           <a href="https://github.com/jkopi" target="_blank" rel="noreferrer">
@@ -60,3 +49,15 @@ function Hero() {
 }
 
 export default Hero;
+
+// <Text>
+//   I'm a software developer who likes to keep constantly learning new things and progressing as a developer
+// </Text>
+// <Text>
+//   By day I'm working{' '}
+//   <StyledLink href="https://www.oamk.fi" target="_blank" rel="noreferrer">
+//     @oamk
+//   </StyledLink>{' '}
+//   as a project designer and on my spare time I am a front-end developer working on a Legal Tech startup
+// </Text>
+// <Text>Interested in developing digital services and recently design systems</Text>

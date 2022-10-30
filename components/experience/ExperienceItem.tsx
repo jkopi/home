@@ -35,21 +35,21 @@ const StyledDiv = stitches.styled('div', {
 const testData = [
   {
     company: 'asdasd',
-    title: 'cook',
+    title: 'foo',
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, rem. Voluptates totam fuga perspiciatis laborum nisi omnis voluptatibus quo quaerat aspernatur, doloribus, quas facilis fugiat molestias autem? Fuga, vitae dolores.',
     startDate: '20-12-2022',
     endDate: '21-13-2025',
   },
   {
     company: 'asdasd',
-    title: 'cook',
+    title: 'bar',
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, rem. Voluptates totam fuga perspiciatis laborum nisi omnis voluptatibus quo quaerat aspernatur, doloribus, quas facilis fugiat molestias autem? Fuga, vitae dolores.',
     startDate: '20-12-2022',
     endDate: '21-13-2025',
   },
   {
     company: 'asdasd',
-    title: 'cook',
+    title: 'baz',
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, rem. Voluptates totam fuga perspiciatis laborum nisi omnis voluptatibus quo quaerat aspernatur, doloribus, quas facilis fugiat molestias autem? Fuga, vitae dolores.',
     startDate: '20-12-2022',
     endDate: '21-13-2025',

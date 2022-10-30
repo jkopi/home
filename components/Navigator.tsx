@@ -1,10 +1,5 @@
-import Link from 'next/link';
-import NavLink from 'next/link';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
 import { stitches } from '../config/stitches.config';
-import { ColorContext } from '../context/ColorContext';
-import { ColorDropdown } from './ColorDropdown';
 import Text from './Text';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -15,7 +10,6 @@ const StyledNavigator = stitches.styled('header', {
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '1em',
-  // border: '1px solid salmon'
 });
 
 const StyledLinkContainer = stitches.styled('div', {
