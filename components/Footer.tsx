@@ -5,8 +5,8 @@ const StyledFooter = stitches.styled('footer', {
   width: '100%',
   display: 'flex',
   justifyContent: 'flex-start',
-  position: 'absolute',
-  bottom: '0',
+  // position: 'absolute',
+  // bottom: '0',
   padding: '1em',
   '@bp3': {
     justifyContent: 'center'
@@ -16,7 +16,7 @@ const StyledFooter = stitches.styled('footer', {
 const Footer = () => {
   return (
     <StyledFooter>
-      <Text>&copy; {new Date().getFullYear()} - Jaakko Lankila</Text>
+      <Text size="small" weight="bold">&copy; {new Date().getFullYear()} - Jaakko Lankila</Text>
     </StyledFooter>
   );
 };

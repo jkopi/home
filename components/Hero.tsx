@@ -7,6 +7,8 @@ import Divider from './Divider';
 
 const Container = stitches.styled('div', {
   padding: '1em',
+  marginTop: '2em',
+  marginBottom: '2em'
 });
 
 const SocialsBox = stitches.styled('div', {
@@ -30,7 +32,7 @@ function Hero() {
   return (
     <Container>
       <H1>Hey there! &#128075;</H1>
-      <Text css={{ marginBottom: '2rem' }}>This site is under construction 🚧</Text>
+      <Text css={{ marginBottom: '2rem' }} weight="medium">This site is under construction 🚧</Text>
       <SocialsBox>
         <IconWrapper size="small">
           <a href="https://github.com/jkopi" target="_blank" rel="noreferrer">

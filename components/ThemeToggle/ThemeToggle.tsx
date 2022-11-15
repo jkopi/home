@@ -7,9 +7,10 @@ import Icon, { IconWrapper } from '../Icon';
 const StyledToggle = stitches.styled('div');
 
 const StyledButton = stitches.styled('button', {
-  padding: '10px',
+  border: '0',
   borderRadius: '10px',
   backgroundColor: '$bgBody',
+  cursor: 'pointer'
 });
 
 export const ThemeToggle = () => {
@@ -17,11 +18,11 @@ export const ThemeToggle = () => {
 
   const icon =
     ctx?.theme === 'dark' ? (
-      <IconWrapper size="xSmall">
+      <IconWrapper size="small">
         <BsSun />
       </IconWrapper>
     ) : (
-      <IconWrapper size="xSmall">
+      <IconWrapper size="small">
         <BsMoon />
       </IconWrapper>
     );

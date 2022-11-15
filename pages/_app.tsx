@@ -9,21 +9,14 @@ import { stitches, globalStyles } from '../config/stitches.config';
 const StyledWrapper = stitches.styled('div');
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [queryClient] = useState(() => new QueryClient());
-
   globalStyles();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Hydrate>
-        <ColorProvider>
-          <StyledWrapper>
-            <Component {...pageProps} />
-          </StyledWrapper>
-        </ColorProvider>
-      </Hydrate>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <ColorProvider>
+      <StyledWrapper>
+        <Component {...pageProps} />
+      </StyledWrapper>
+    </ColorProvider>
   );
 }
 

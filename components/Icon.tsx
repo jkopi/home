@@ -4,7 +4,6 @@ export const IconWrapper = stitches.styled('span', {
   padding: '2px',
   color: '$text',
   '&:hover': {
-    color: '$dim',
     transition: 'color .1s ease',
   },
   variants: {

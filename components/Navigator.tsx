@@ -19,16 +19,25 @@ const StyledLinkContainer = stitches.styled('div', {
 });
 
 const StyledLink = stitches.styled('a', {
+  fontWeight: 'bold',
   height: 'fit-content',
   cursor: 'pointer',
+
   '&:hover': {
-    color: 'SaddleBrown',
+    color: '$text',
+    textDecoration: 'underline',
+    textDecorationColor: '$text',
+    textDecorationThickness: '2px',
+    textUnderlineOffset: '6px',
   },
 
   variants: {
     styling: {
       active: {
-        color: 'Aquamarine',
+        textDecoration: 'underline',
+        textDecorationColor: '$text',
+        textDecorationThickness: '2px',
+        textUnderlineOffset: '6px',
       },
     },
   },

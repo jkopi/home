@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 const randomColor = require('random-hex-color');
 
 type ProviderProps = {
@@ -21,15 +21,25 @@ type CustomThemeColors = {
 
 export const ColorContext = createContext<ContextProps | undefined>(undefined);
 
+type ThemeModes = 'light' | 'dark'
+
 const ColorProvider = ({ children }: ProviderProps) => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  const [theme, setTheme] = useState<ThemeModes>('light');
   const [customThemeColors, setCustomThemeColors] = useState<CustomThemeColors>({
     backGround: '#fff',
     foreGround: '#08192e',
   });
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const themeInUse = theme === 'light' ? 'dark' : 'light'; 
+    // check window existence for next's sake
+    if (typeof window !== 'undefined') {
+      setTheme(themeInUse);
+      window.localStorage.setItem('theme', themeInUse)
+    } else {
+      setTheme(themeInUse);
+    }
   };
 
   const setCustomThemeBg = () => {
@@ -41,6 +51,14 @@ const ColorProvider = ({ children }: ProviderProps) => {
     const color = randomColor();
     setCustomThemeColors({ ...customThemeColors, foreGround: color });
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      let storedThemeValue = window.localStorage.getItem('theme');
+      let themeToken = storedThemeValue as ThemeModes;
+      setTheme(themeToken);
+    }
+  }, [setTheme])
 
   return (
     <ColorContext.Provider

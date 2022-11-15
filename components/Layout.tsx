@@ -8,12 +8,14 @@ const StyledLayout = stitches.styled('div', {
   width: '100%',
   minHeight: '100vh',
   backgroundColor: '$bgBody',
+  // display: 'flex',
+  // flexDirection: 'column',
 });
 
 const StyledChildren = stitches.styled('main', {
   margin: '0 auto',
-  '@bp3': {
-    width: '60%',
+  '@bp4': {
+    width: '70%',
     justifyItems: 'center',
   },
 });
@@ -31,7 +33,6 @@ const Layout = ({ children }: Props) => {
         <Navigator />
         {children}
       </StyledChildren>
-      <Footer />
     </StyledLayout>
   );
 };
