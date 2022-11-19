@@ -1,7 +1,7 @@
 import { createClient, SanityClient } from 'next-sanity';
 
 const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID,
+  projectId: 'skeft4xc',
   dataset: 'production',
   apiVersion: '2022-11-15',
   useCdn: false,
