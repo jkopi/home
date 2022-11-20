@@ -58,7 +58,7 @@ const Projects: NextPage<Props> = ({ data }) => {
             {data &&
               data
                 .sort((a, b) => new Date(b.date).getFullYear() - new Date(a.date).getFullYear())
-                .map((project) => <ProjectCard data={project} />)}
+                .map((project) => <ProjectCard key={project._id} data={project} />)}
           </ProjectGrid>
         </Container>
       </Layout>

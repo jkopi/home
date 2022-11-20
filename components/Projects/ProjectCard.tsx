@@ -39,7 +39,7 @@ export const ProjectCard = ({ data }: Props) => {
       </StyledCardBody>
       <StyledCardFooter>
         {data.technologies.map((tech) => (
-          <Span type="badge">
+          <Span key={tech} type="badge">
             {tech}
           </Span>
         ))}
