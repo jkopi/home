@@ -11,7 +11,7 @@ const transitionVariants: Variants = {
   },
   exit: {
     opacity: 0,
-    y: -10,
+    y: -1,
   },
 };
 

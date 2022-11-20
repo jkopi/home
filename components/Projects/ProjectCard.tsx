@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { stitches } from '../../config/stitches.config';
 import { TProject } from '../../pages/projects';
 import Text from '../Text';
