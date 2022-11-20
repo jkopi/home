@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { ResumeSection } from '../components/Resume/ResumeSection';
+import { ResumeSection } from '../components/Resume';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import client from '../config/sanity';
@@ -32,7 +32,6 @@ const Resume: NextPage<Props> = ({ data }) => {
       </Head>
       <Layout>
         <ResumeSection experienceData={data} />
-        <Footer />
       </Layout>
     </>
   );

@@ -71,7 +71,7 @@ export const ResumeSection = ({ experienceData }: Props) => {
               </Span>
             </Text>
             <DescriptionContainer>
-                <PortableText value={exp.description} components={components} onMissingComponent={false} />
+              <PortableText value={exp.description} components={components} onMissingComponent={false} />
             </DescriptionContainer>
           </Experience>
         ))}

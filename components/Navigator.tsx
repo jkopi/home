@@ -9,7 +9,11 @@ const StyledNavigator = stitches.styled('header', {
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
+  alignSelf: 'center',
   padding: '1em',
+  '@bp4': {
+    width: '70%',
+  },
 });
 
 const StyledLinkContainer = stitches.styled('div', {
@@ -59,6 +63,9 @@ function Navigator() {
         </StyledLink>
         <StyledLink onClick={() => goTo('/resume')} styling={location.asPath === '/resume' ? 'active' : undefined}>
           <Text size="small">Resume</Text>
+        </StyledLink>
+        <StyledLink onClick={() => goTo('/projects')} styling={location.asPath === '/projects' ? 'active' : undefined}>
+          <Text size="small">Projects</Text>
         </StyledLink>
         <StyledLink onClick={() => goTo('/about')} styling={location.asPath === '/about' ? 'active' : undefined}>
           <Text size="small">About me</Text>

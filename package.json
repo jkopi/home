@@ -13,6 +13,8 @@
     "@stitches/react": "^1.2.8",
     "@tanstack/react-query": "^4.7.1",
     "@tanstack/react-query-devtools": "^4.7.1",
+    "date-fns": "^2.29.3",
+    "framer-motion": "^7.6.7",
     "next": "12.2.5",
     "next-sanity": "^0.8.4",
     "random-hex-color": "^1.0.1",

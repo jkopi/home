@@ -1,14 +1,19 @@
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import { H1 } from '../components/Heading';
 import Layout from '../components/Layout';
+import Text from '../components/Text';
 import { stitches } from '../config/stitches.config';
 
 const Container = stitches.styled('div', {
   padding: '1em',
 });
 
-const About: NextPage = () => {
+type Props = {
+  data: any;
+};
+
+const About: NextPage<Props> = ({ data }: Props) => {
+  console.log({ data });
   return (
     <>
       <Head>
@@ -18,12 +23,20 @@ const About: NextPage = () => {
       </Head>
       <Layout>
         <Container>
-          <H1>About me</H1>
-          <p>Under construction 🚧</p>
+          <Text as="h1" size="h1">About me</Text>
+          <Text size="medium">Under construction 🚧</Text>
         </Container>
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      data: { foo: 'bar' },
+    },
+  };
 };
 
 export default About;

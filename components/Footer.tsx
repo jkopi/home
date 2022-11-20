@@ -5,17 +5,18 @@ const StyledFooter = stitches.styled('footer', {
   width: '100%',
   display: 'flex',
   justifyContent: 'flex-start',
-  // position: 'absolute',
-  // bottom: '0',
+  backgroundColor: '$bgBody',
   padding: '1em',
   '@bp3': {
     justifyContent: 'center'
   }
 });
 
-const Footer = () => {
+type Props = Pick<React.HTMLProps<HTMLElement>, "className">;
+
+const Footer = ({ className }: Props) => {
   return (
-    <StyledFooter>
+    <StyledFooter className={className}>
       <Text size="small" weight="bold">&copy; {new Date().getFullYear()} - Jaakko Lankila</Text>
     </StyledFooter>
   );

@@ -5,7 +5,7 @@ const stitches = createStitches({
     colors: {
       text: '#30394f',
       bgBody: '#fff',
-
+      bgSecondary: '#f1f3f5',
       black: '#28282B',
       dim: '#313136',
       gray400: 'gainsboro',
@@ -54,6 +54,7 @@ const darkTheme = stitches.createTheme('dark', {
   colors: {
     text: '#fff',
     bgBody: '#30394f',
+    bgSecondary: '#212529',
   },
 });
 

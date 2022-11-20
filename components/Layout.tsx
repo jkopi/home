@@ -1,4 +1,7 @@
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
+import { transitionVariants } from '../config/motion';
 import { darkTheme, stitches } from '../config/stitches.config';
 import { ColorContext } from '../context/ColorContext';
 import Footer from './Footer';
@@ -8,11 +11,13 @@ const StyledLayout = stitches.styled('div', {
   width: '100%',
   minHeight: '100vh',
   backgroundColor: '$bgBody',
-  // display: 'flex',
-  // flexDirection: 'column',
+  display: 'flex',
+  flexDirection: 'column',
+  alignContent: 'center',
 });
 
-const StyledChildren = stitches.styled('main', {
+const StyledMain = stitches.styled(motion.main, {
+  width: '100%',
   margin: '0 auto',
   '@bp4': {
     width: '70%',
@@ -26,14 +31,25 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   const ctx = useContext(ColorContext);
+  const router = useRouter();
 
   return (
-    <StyledLayout className={ctx?.theme === 'dark' ? darkTheme : 'light'}>
-      <StyledChildren>
+    <>
+      <StyledLayout className={ctx?.theme === 'dark' ? darkTheme : 'light'}>
         <Navigator />
-        {children}
-      </StyledChildren>
-    </StyledLayout>
+        <StyledMain
+          key={router.asPath}
+          variants={transitionVariants}
+          animate="animate"
+          transition={{ ease: 'anticipate' }}
+          initial="initial"
+          exit="exit"
+        >
+          {children}
+        </StyledMain>
+      </StyledLayout>
+      <Footer className={ctx?.theme === 'dark' ? darkTheme : 'light'} />
+    </>
   );
 };
 
